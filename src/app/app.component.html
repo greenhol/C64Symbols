@@ -1,3 +1,6 @@
 <app-symbol-generator></app-symbol-generator>
-<button (click)="next()">Next</button>
+<!-- <button (click)="next()">Next</button> -->
+<select [(ngModel)]="symbolName" (ngModelChange)="onDropDownChange($event)">
+    <option *ngFor="let symbolName of symbolNameList" [ngValue]="symbolName">{{symbolName}}</option>
+</select>
 <a id="link">Export (Save As...)</a>

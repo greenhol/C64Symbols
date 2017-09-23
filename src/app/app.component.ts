@@ -8,6 +8,14 @@ import { SymbolGeneratorComponent } from './symbol-generator/symbol-generator.co
 })
 export class AppComponent implements AfterViewInit {
 
+  public symbolNameList: string[] = [
+    'q1', 'q2', 'w1', 'w2', 'e1', 'e2', 'r1', 'r2', 't1', 't2', 'y1', 'y2', 'u1', 'u2', 'i1', 'i2', 'o1', 'o2', 'p1', 'p2',
+    'a1', 'a2', 's1', 's2', 'd1', 'd2', 'f1', 'f2', 'g1', 'g2', 'h1', 'h2', 'j1', 'j2', 'k1', 'k2', 'l1', 'l2',
+    'z1', 'z2', 'x1', 'x2', 'c1', 'c2', 'v1', 'v2', 'b1', 'b2', 'n1', 'n2', 'm1', 'm2',
+    'pl1', 'pl2', 'mi1', 'mi2', 'et1', 'et2', 'st1', 'st2'
+  ];
+  public symbolName = this.symbolNameList[0];
+
   @ViewChild(SymbolGeneratorComponent)
   private symbolGenerator: SymbolGeneratorComponent;
 
@@ -18,9 +26,8 @@ export class AppComponent implements AfterViewInit {
     this.generateDownloadUrl();
   }
 
-  public next(): void {
-    this.symbolGenerator.next(); 
-    this.generateDownloadUrl();
+  public onDropDownChange(value: string) {
+    this.symbolGenerator.drawSymbol(value);
   }
 
   private generateDownloadUrl() {
