@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { SymbolGeneratorComponent } from './symbol-generator/symbol-generator.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewInit {
 
   @ViewChild(SymbolGeneratorComponent)
   private symbolGenerator: SymbolGeneratorComponent;
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
   constructor(private element: ElementRef, private renderer: Renderer2) {
   }
 
-  public ngOnInit() {
+  public ngAfterViewInit() {
     this.generateDownloadUrl();
   }
 

@@ -6,8 +6,8 @@ export interface Dimensions {
 }
 
 export const dim: Dimensions = {
-    boxWidth: 80,
-    boxHeight: 80,
-    strokeWidth: 4,
+    boxWidth: 200,
+    boxHeight: 200,
+    strokeWidth: 20,
     color: 'black'
 }

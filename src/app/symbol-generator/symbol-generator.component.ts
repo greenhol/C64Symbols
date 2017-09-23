@@ -23,12 +23,15 @@ export class SymbolGeneratorComponent implements OnInit {
   private cnt = 0;
 
   constructor(private element: ElementRef, d3Service: D3Service) {
-    this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 Service
+    this.d3 = d3Service.getD3();
   }
 
   ngOnInit() {
     const data: C64Symbol = w2;
-    this.svg = this.d3.select(this.element.nativeElement).append('svg');
+    this.svg = this.d3.select(this.element.nativeElement)
+      .append('svg')
+      .style("width", dim.boxWidth + 20)
+      .style("height", dim.boxWidth + 20);
 
     this.svgg = this.svg.append('g')
       .attr('transform', 'translate(10.5, 10.5)');
@@ -48,7 +51,9 @@ export class SymbolGeneratorComponent implements OnInit {
     this.allSymbos.push(a1);
     this.allSymbos.push(z2);
 
-    this.createSymbol(this.allSymbos[this.cnt])
+
+    // this.createSymbol(this.allSymbos[this.cnt]);
+    this.createSymbol(this.allSymbos[5]);
 
     // setInterval(() => {
     //   this.next();
