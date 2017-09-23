@@ -1,38 +1,45 @@
 import { Component, ViewEncapsulation, OnInit, ElementRef } from '@angular/core';
 import { D3Service, D3, Selection } from 'd3-ng2-service';
-import { global } from './../../global/global';
+import { dim } from './../data/dimensions';
 import { C64Symbol, SvgLine, SvgRectangle, SvgCircle, SvgPath } from './../data/types';
 import { q1, q2, w1, w2, a1, z2 } from './../data/symbols';
 
 @Component({
   selector: 'app-symbol-generator',
-  templateUrl: './symbol-generator.component.html',
-  styleUrls: ['./symbol-generator.component.scss'],
+  template: ``,
   encapsulation: ViewEncapsulation.None
 })
 export class SymbolGeneratorComponent implements OnInit {
+
+  public get svgElement(): Element {
+    return this.element.nativeElement.querySelector('svg');
+  };
 
   private d3: D3;
   private el: Element;
   private svg: any;
   private svgg: any;
   private allSymbos: C64Symbol[] = [];
+  private cnt = 0;
 
-  constructor(element: ElementRef, d3Service: D3Service) {
+  constructor(private element: ElementRef, d3Service: D3Service) {
     this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 Service
-    this.el = element.nativeElement;
   }
 
   ngOnInit() {
     const data: C64Symbol = w2;
+    this.svg = this.d3.select(this.element.nativeElement).append('svg');
 
-    this.svg = this.d3.select(this.el).append('svg');
     this.svgg = this.svg.append('g')
       .attr('transform', 'translate(10.5, 10.5)');
 
     // Create Box
     this.svgg.append('rect')
-      .classed('box', true);
+      .attr('width', dim.boxWidth)
+      .attr('height', dim.boxHeight)
+      .style('stroke-width', dim.strokeWidth)
+      .style('fill', 'none')
+      .style('stroke', 'black');
 
     this.allSymbos.push(q1);
     this.allSymbos.push(q2);
@@ -41,16 +48,19 @@ export class SymbolGeneratorComponent implements OnInit {
     this.allSymbos.push(a1);
     this.allSymbos.push(z2);
 
-    // this.createSymbol(this.allSymbos[0])
+    this.createSymbol(this.allSymbos[this.cnt])
 
-    let cnt = 0;
-    setInterval(() => {
-      this.createSymbol(this.allSymbos[cnt]);
-      cnt++;      
-      if (cnt > this.allSymbos.length-1) {
-        cnt = 0; 
-      }
-    }, 1000);
+    // setInterval(() => {
+    //   this.next();
+    // }, 1000);
+  }
+
+  public next(): void {
+    this.createSymbol(this.allSymbos[this.cnt]);
+    this.cnt++;      
+    if (this.cnt > this.allSymbos.length-1) {
+      this.cnt = 0; 
+    }
   }
 
   private createSymbol(symbol: C64Symbol): void {
@@ -65,11 +75,13 @@ export class SymbolGeneratorComponent implements OnInit {
         .data(data)
         .enter()
         .append(shape)
-        .classed(shape, true)      
+        .classed(shape, true)
         .attr('x1', (d: SvgLine) => d.x1)
         .attr('y1', (d: SvgLine) => d.y1)
         .attr('x2', (d: SvgLine) => d.x2)
-        .attr('y2', (d: SvgLine) => d.y2);
+        .attr('y2', (d: SvgLine) => d.y2)
+        .style('stroke', dim.color)
+        .style('stroke-width', dim.strokeWidth);
     }
     // Update Circles
     shape = 'circle';
@@ -85,7 +97,8 @@ export class SymbolGeneratorComponent implements OnInit {
         .attr('cy', (d: SvgCircle) => d.cy)
         .attr('r', (d: SvgCircle) => d.r)
         .style('stroke', (d: SvgCircle) => d.stroke ? 'black' : 'none')
-        .style('fill', (d: SvgCircle) => d.fill ? 'black' : 'none');
+        .style('fill', (d: SvgCircle) => d.fill ? 'black' : 'none')
+        .style('stroke-width', dim.strokeWidth);
     }    
     // Update Rectangles
     shape = 'rect';
@@ -102,7 +115,8 @@ export class SymbolGeneratorComponent implements OnInit {
         .attr('width', (d: SvgRectangle) => d.width)
         .attr('height', (d: SvgRectangle) => d.height)
         .style('stroke', (d: SvgCircle) => d.stroke ? 'black' : 'none')
-        .style('fill', (d: SvgCircle) => d.fill ? 'black' : 'none');
+        .style('fill', (d: SvgCircle) => d.fill ? 'black' : 'none')
+        .style('stroke-width', dim.strokeWidth);
     }
     // Update Paths
     shape = 'path';
@@ -116,7 +130,8 @@ export class SymbolGeneratorComponent implements OnInit {
         .classed(shape, true)
         .attr('d', (d: SvgPath) => d.d)
         .style('stroke', (d: SvgPath) => d.stroke ? 'black' : 'none')
-        .style('fill', (d: SvgPath) => d.fill ? 'black' : 'none');
+        .style('fill', (d: SvgPath) => d.fill ? 'black' : 'none')
+        .style('stroke-width', dim.strokeWidth);
     }    
   }
 }
