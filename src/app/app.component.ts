@@ -28,6 +28,7 @@ export class AppComponent implements AfterViewInit {
 
   public onDropDownChange(value: string) {
     this.symbolGenerator.drawSymbol(value);
+    this.generateDownloadUrl();
   }
 
   private generateDownloadUrl() {
