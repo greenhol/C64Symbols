@@ -2,10 +2,11 @@ import { Component, ViewEncapsulation, OnInit, ElementRef } from '@angular/core'
 import { D3Service, D3, Selection } from 'd3-ng2-service';
 import { dim } from './../data/dimensions';
 import { C64Symbol, SvgLine, SvgRectangle, SvgCircle, SvgPath } from './../data/types';
-import { q1, q2, w1, w2, e1, e2, r1, r2, t1, t2, y1, y2, u1, u2, i1, i2, o1, o2, p1, p2,
-  a1, a2, s1, s2, d1, d2, f1, f2, g1, g2, h1, h2, j1, j2, k1, k2, l1, l2,
-  z1, z2, x1, x2, c1, c2, v1, v2, b1, b2, n1, n2, m1, m2,
-  pl1, pl2, mi1, mi2, et1, et2, st1, st2
+import {
+  hAB, hD1, hB3, hD7, hB1, hC5, hB2, hD2, hA3, hD4, hB7, hD9, hB8, hD5, hA2, hC9, hB9,
+  hCF, hAF, hD0, hB0, hC1, hAE, hD3, hAC, hC4, hBB, hC6, hA5, hC7, hB4, hC8, hB5, hCA,
+  hA1, hCB, hB6, hCC, hAD, hDA, hBD, hD8, hBC, hC3, hBE, hD6, hBF, hC2, hA7, hCE, hAA,
+  hCD, hA6, hDB, hDC, hDD, hA4, hBA, hDF, hC0, hA8, hA9
 } from './../data/symbols';
 
 @Component({
@@ -29,70 +30,72 @@ export class SymbolGeneratorComponent implements OnInit {
 
   constructor(private element: ElementRef, d3Service: D3Service) {
     this.d3 = d3Service.getD3();
-    this.allSymbols.set('q1', q1);
-    this.allSymbols.set('q2', q2);
-    this.allSymbols.set('w1', w1);
-    this.allSymbols.set('w2', w2);
-    this.allSymbols.set('e1', e1);
-    this.allSymbols.set('e2', e2);
-    this.allSymbols.set('r1', r1);
-    this.allSymbols.set('r2', r2);
-    this.allSymbols.set('t1', t1);
-    this.allSymbols.set('t2', t2);
-    this.allSymbols.set('y1', y1);
-    this.allSymbols.set('y2', y2);
-    this.allSymbols.set('u1', u1);
-    this.allSymbols.set('u2', u2);
-    this.allSymbols.set('i1', i1);
-    this.allSymbols.set('i2', i2);
-    this.allSymbols.set('o1', o1);
-    this.allSymbols.set('o2', o2);
-    this.allSymbols.set('p1', p1);
-    this.allSymbols.set('p2', p2);
-    this.allSymbols.set('a1', a1);
-    this.allSymbols.set('a2', a2);
-    this.allSymbols.set('s1', s1);
-    this.allSymbols.set('s2', s2);
-    this.allSymbols.set('d1', d1);
-    this.allSymbols.set('d2', d2);
-    this.allSymbols.set('f1', f1);
-    this.allSymbols.set('f2', f2);
-    this.allSymbols.set('g1', g1);
-    this.allSymbols.set('g2', g2);
-    this.allSymbols.set('h1', h1);
-    this.allSymbols.set('h2', h2);
-    this.allSymbols.set('j1', j1);
-    this.allSymbols.set('j2', j2);
-    this.allSymbols.set('k1', k1);
-    this.allSymbols.set('k2', k2);
-    this.allSymbols.set('l1', l1);
-    this.allSymbols.set('l2', l2);
-    this.allSymbols.set('z1', z1);
-    this.allSymbols.set('z2', z2);
-    this.allSymbols.set('x1', x1);
-    this.allSymbols.set('x2', x2);
-    this.allSymbols.set('c1', c1);
-    this.allSymbols.set('c2', c2);
-    this.allSymbols.set('v1', v1);
-    this.allSymbols.set('v2', v2);
-    this.allSymbols.set('b1', b1);
-    this.allSymbols.set('b2', b2);
-    this.allSymbols.set('n1', n1);
-    this.allSymbols.set('n2', n2);
-    this.allSymbols.set('m1', m1);
-    this.allSymbols.set('m2', m2);
-    this.allSymbols.set('pl1', pl1);
-    this.allSymbols.set('pl2', pl2);
-    this.allSymbols.set('mi1', mi1);
-    this.allSymbols.set('mi2', mi2);
-    this.allSymbols.set('et1', et1);
-    this.allSymbols.set('et2', et2);
-    this.allSymbols.set('st1', st1);
-    this.allSymbols.set('st2', st2);
+    this.allSymbols.set('AB', hAB);
+    this.allSymbols.set('D1', hD1);
+    this.allSymbols.set('B3', hB3);
+    this.allSymbols.set('D7', hD7);
+    this.allSymbols.set('B1', hB1);
+    this.allSymbols.set('C5', hC5);
+    this.allSymbols.set('B2', hB2);
+    this.allSymbols.set('D2', hD2);
+    this.allSymbols.set('A3', hA3);
+    this.allSymbols.set('D4', hD4);
+    this.allSymbols.set('B7', hB7);
+    this.allSymbols.set('D9', hD9);
+    this.allSymbols.set('B8', hB8);
+    this.allSymbols.set('D5', hD5);
+    this.allSymbols.set('A2', hA2);
+    this.allSymbols.set('C9', hC9);
+    this.allSymbols.set('B9', hB9);
+    this.allSymbols.set('CF', hCF);
+    this.allSymbols.set('AF', hAF);
+    this.allSymbols.set('D0', hD0);
+    this.allSymbols.set('B0', hB0);
+    this.allSymbols.set('C1', hC1);
+    this.allSymbols.set('AE', hAE);
+    this.allSymbols.set('D3', hD3);
+    this.allSymbols.set('AC', hAC);
+    this.allSymbols.set('C4', hC4);
+    this.allSymbols.set('BB', hBB);
+    this.allSymbols.set('C6', hC6);
+    this.allSymbols.set('A5', hA5);
+    this.allSymbols.set('C7', hC7);
+    this.allSymbols.set('B4', hB4);
+    this.allSymbols.set('C8', hC8);
+    this.allSymbols.set('B5', hB5);
+    this.allSymbols.set('CA', hCA);
+    this.allSymbols.set('A1', hA1);
+    this.allSymbols.set('CB', hCB);
+    this.allSymbols.set('B6', hB6);
+    this.allSymbols.set('CC', hCC);
+    this.allSymbols.set('AD', hAD);
+    this.allSymbols.set('DA', hDA);
+    this.allSymbols.set('BD', hBD);
+    this.allSymbols.set('D8', hD8);
+    this.allSymbols.set('BC', hBC);
+    this.allSymbols.set('C3', hC3);
+    this.allSymbols.set('BE', hBE);
+    this.allSymbols.set('D6', hD6);
+    this.allSymbols.set('BF', hBF);
+    this.allSymbols.set('C2', hC2);
+    this.allSymbols.set('A7', hA7);
+    this.allSymbols.set('CE', hCE);
+    this.allSymbols.set('AA', hAA);
+    this.allSymbols.set('CD', hCD);
+    this.allSymbols.set('A6', hA6);
+    this.allSymbols.set('DB', hDB);
+    this.allSymbols.set('DC', hDC);
+    this.allSymbols.set('DD', hDD);
+    this.allSymbols.set('A4', hA4);
+    this.allSymbols.set('BA', hBA);
+    this.allSymbols.set('DF', hDF);
+    this.allSymbols.set('C0', hC0);
+    this.allSymbols.set('A8', hA8);
+    this.allSymbols.set('A9', hA9);
   }
 
   ngOnInit() {
-    const data: C64Symbol = w2;
+    const data: C64Symbol = hAB;
     this.svg = this.d3.select(this.element.nativeElement)
       .append('svg')
       .style("width", dim.boxWidth + 20)
@@ -109,7 +112,7 @@ export class SymbolGeneratorComponent implements OnInit {
       .style('fill', 'none')
       .style('stroke', 'black');
 
-    this.createSymbol(this.allSymbols.get('q1'));
+    this.createSymbol(this.allSymbols.get('AB'));
   }
 
   public drawSymbol(name: string): void {

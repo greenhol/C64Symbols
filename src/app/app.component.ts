@@ -1,6 +1,11 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { SymbolGeneratorComponent } from './symbol-generator/symbol-generator.component';
 
+interface SymbolElement {
+  hex: string;
+  key: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,13 +13,71 @@ import { SymbolGeneratorComponent } from './symbol-generator/symbol-generator.co
 })
 export class AppComponent implements AfterViewInit {
 
-  public symbolNameList: string[] = [
-    'q1', 'q2', 'w1', 'w2', 'e1', 'e2', 'r1', 'r2', 't1', 't2', 'y1', 'y2', 'u1', 'u2', 'i1', 'i2', 'o1', 'o2', 'p1', 'p2',
-    'a1', 'a2', 's1', 's2', 'd1', 'd2', 'f1', 'f2', 'g1', 'g2', 'h1', 'h2', 'j1', 'j2', 'k1', 'k2', 'l1', 'l2',
-    'z1', 'z2', 'x1', 'x2', 'c1', 'c2', 'v1', 'v2', 'b1', 'b2', 'n1', 'n2', 'm1', 'm2',
-    'pl1', 'pl2', 'mi1', 'mi2', 'et1', 'et2', 'st1', 'st2'
+  public symbolList: SymbolElement[] = [
+    { hex: 'AB', key: 'Q (l)' },
+    { hex: 'D1', key: 'Q (r)' },
+    { hex: 'B3', key: 'W (l)' },
+    { hex: 'D7', key: 'W (r)' },
+    { hex: 'B1', key: 'E (l)' },
+    { hex: 'C5', key: 'E (r)' },
+    { hex: 'B2', key: 'R (l)' },
+    { hex: 'D2', key: 'R (r)' },
+    { hex: 'A3', key: 'T (l)' },
+    { hex: 'D4', key: 'T (r)' },
+    { hex: 'B7', key: 'Y (l)' },
+    { hex: 'D9', key: 'Y (r)' },
+    { hex: 'B8', key: 'U (l)' },
+    { hex: 'D5', key: 'U (r)' },
+    { hex: 'A2', key: 'I (l)' },
+    { hex: 'C9', key: 'I (r)' },
+    { hex: 'B9', key: 'O (l)' },
+    { hex: 'CF', key: 'O (r)' },
+    { hex: 'AF', key: 'P (l)' },
+    { hex: 'D0', key: 'P (r)' },
+    { hex: 'B0', key: 'A (l)' },
+    { hex: 'C1', key: 'A (r)' },
+    { hex: 'AE', key: 'S (l)' },
+    { hex: 'D3', key: 'S (r)' },
+    { hex: 'AC', key: 'D (l)' },
+    { hex: 'C4', key: 'D (r)' },
+    { hex: 'BB', key: 'F (l)' },
+    { hex: 'C6', key: 'F (r)' },
+    { hex: 'A5', key: 'G (l)' },
+    { hex: 'C7', key: 'G (r)' },
+    { hex: 'B4', key: 'H (l)' },
+    { hex: 'C8', key: 'H (r)' },
+    { hex: 'B5', key: 'J (l)' },
+    { hex: 'CA', key: 'J (r)' },
+    { hex: 'A1', key: 'K (l)' },
+    { hex: 'CB', key: 'K (r)' },
+    { hex: 'B6', key: 'L (l)' },
+    { hex: 'CC', key: 'L (r)' },
+    { hex: 'AD', key: 'Z (l)' },
+    { hex: 'DA', key: 'Z (r)' },
+    { hex: 'BD', key: 'X (l)' },
+    { hex: 'D8', key: 'X (r)' },
+    { hex: 'BC', key: 'C (l)' },
+    { hex: 'C3', key: 'C (r)' },
+    { hex: 'BE', key: 'V (l)' },
+    { hex: 'D6', key: 'V (r)' },
+    { hex: 'BF', key: 'B (l)' },
+    { hex: 'C2', key: 'B (r)' },
+    { hex: 'A7', key: 'N (l)' },
+    { hex: 'CE', key: 'N (r)' },
+    { hex: 'AA', key: 'M (l)' },
+    { hex: 'CD', key: 'M (r)' },
+    { hex: 'A6', key: '+ (l)' },
+    { hex: 'DB', key: '+ (r)' },
+    { hex: 'DC', key: '- (l)' },
+    { hex: 'DD', key: '- (r)' },
+    { hex: 'A4', key: '@ (l)' },
+    { hex: 'BA', key: '@ (r)' },
+    { hex: 'DF', key: '* (l)' },
+    { hex: 'C0', key: '* (r)' },
+    { hex: 'A8', key: '£ (l)' },
+    { hex: 'A9', key: '£ (r)' }
   ];
-  public symbolName = this.symbolNameList[0];
+  public symbol = this.symbolList[0];
 
   @ViewChild(SymbolGeneratorComponent)
   private symbolGenerator: SymbolGeneratorComponent;
@@ -26,8 +89,8 @@ export class AppComponent implements AfterViewInit {
     this.generateDownloadUrl();
   }
 
-  public onDropDownChange(value: string) {
-    this.symbolGenerator.drawSymbol(value);
+  public onDropDownChange(value: SymbolElement) {
+    this.symbolGenerator.drawSymbol(value.hex);
     this.generateDownloadUrl();
   }
 

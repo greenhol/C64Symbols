@@ -1,7 +1,7 @@
 import { dim } from './dimensions';
 import { C64Symbol } from './types';
 
-export const q1: C64Symbol = {
+export const hAB: C64Symbol = {
     lines: [
         {
             x1: dim.boxWidth/2,
@@ -16,8 +16,8 @@ export const q1: C64Symbol = {
             y2: dim.boxHeight/2
         }
     ]
-};
-export const q2: C64Symbol = {
+}; // q1
+export const hD1: C64Symbol = {
     circles: [
         {
             cx: dim.boxWidth/2,
@@ -27,8 +27,8 @@ export const q2: C64Symbol = {
             stroke: false
         },
     ]
-};
-export const w1: C64Symbol = {
+}; // q2
+export const hB3: C64Symbol = {
     lines: [
         {
             x1: dim.boxWidth/2,
@@ -43,8 +43,8 @@ export const w1: C64Symbol = {
             y2: dim.boxHeight/2
         }
     ]
-};
-export const w2: C64Symbol = {
+}; // w1
+export const hD7: C64Symbol = {
     circles: [
         {
             cx: dim.boxWidth/2,
@@ -54,8 +54,8 @@ export const w2: C64Symbol = {
             stroke: true
         },
     ]
-};
-export const e1: C64Symbol = {
+}; // w2
+export const hB1: C64Symbol = {
     lines: [
         {
             x1: dim.boxWidth/2,
@@ -70,8 +70,8 @@ export const e1: C64Symbol = {
             y2: dim.boxHeight/2
         }
     ]
-};
-export const e2: C64Symbol = {
+}; // e1
+export const hC5: C64Symbol = {
     lines: [
         {
             x1: 0,
@@ -80,8 +80,8 @@ export const e2: C64Symbol = {
             y2: dim.boxHeight/7*1
         }
     ]
-};
-export const r1: C64Symbol = {
+}; // e2
+export const hB2: C64Symbol = {
     lines: [
         {
             x1: dim.boxWidth/2,
@@ -96,8 +96,8 @@ export const r1: C64Symbol = {
             y2: dim.boxHeight/2
         }
     ]
-};
-export const r2: C64Symbol = {
+}; // r1
+export const hD2: C64Symbol = {
     lines: [
         {
             x1: 0,
@@ -106,8 +106,8 @@ export const r2: C64Symbol = {
             y2: dim.boxHeight/7*6
         }
     ]
-};
-export const t1: C64Symbol = {
+}; // r2
+export const hA3: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -118,8 +118,8 @@ export const t1: C64Symbol = {
             stroke: false
         }
     ]
-};
-export const t2: C64Symbol = {
+}; // t1
+export const hD4: C64Symbol = {
     lines: [
         {
             x1: dim.boxWidth/7*1,
@@ -128,8 +128,8 @@ export const t2: C64Symbol = {
             y2: dim.boxHeight
         }
     ]
-};
-export const y1: C64Symbol = {
+}; // t2
+export const hB7: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -140,8 +140,8 @@ export const y1: C64Symbol = {
             stroke: false
         }
     ]
-};
-export const y2: C64Symbol = {
+}; // y1
+export const hD9: C64Symbol = {
     lines: [
         {
             x1: dim.boxWidth/7*6,
@@ -150,8 +150,8 @@ export const y2: C64Symbol = {
             y2: dim.boxHeight
         }
     ]
-};
-export const u1: C64Symbol = {
+}; // y2
+export const hB8: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -162,8 +162,8 @@ export const u1: C64Symbol = {
             stroke: false
         }
     ]
-};
-export const u2: C64Symbol = {
+}; // u1
+export const hD5: C64Symbol = {
     paths: [
         {
             d: `M${dim.boxWidth} ${dim.boxHeight/2-dim.strokeWidth}
@@ -174,8 +174,8 @@ export const u2: C64Symbol = {
             stroke: true
         }
     ]
-};
-export const i1: C64Symbol = {
+}; // u2
+export const hA2: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -186,8 +186,8 @@ export const i1: C64Symbol = {
             stroke: false
         }
     ]
-};
-export const i2: C64Symbol = {
+}; // i1
+export const hC9: C64Symbol = {
     paths: [
         {
             d: `M0 ${dim.boxHeight/2-dim.strokeWidth}
@@ -198,8 +198,8 @@ export const i2: C64Symbol = {
             stroke: true
         }
     ]
-};
-export const o1: C64Symbol = {
+}; // i2
+export const hB9: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -210,8 +210,8 @@ export const o1: C64Symbol = {
             stroke: false
         }
     ]
-};
-export const o2: C64Symbol = {
+}; // o1
+export const hCF: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -230,8 +230,8 @@ export const o2: C64Symbol = {
             stroke: false
         }
     ]
-};
-export const p1: C64Symbol = {
+}; // o2
+export const hAF: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -242,8 +242,8 @@ export const p1: C64Symbol = {
             stroke: false
         }
     ]
-};
-export const p2: C64Symbol = {
+}; // p1
+export const hD0: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -262,9 +262,8 @@ export const p2: C64Symbol = {
             stroke: false
         }
     ]
-};
-
-export const a1: C64Symbol = {
+}; // p2
+export const hB0: C64Symbol = {
     rectangles: [
         {
             x: dim.boxWidth/2,
@@ -275,9 +274,9 @@ export const a1: C64Symbol = {
             stroke: true
         },
     ]
-};
-export const a2: C64Symbol = {};
-export const s1: C64Symbol = {
+}; // a1
+export const hC1: C64Symbol = {}; // a2
+export const hAE: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -288,9 +287,9 @@ export const s1: C64Symbol = {
             stroke: true
         },
     ]
-};
-export const s2: C64Symbol = {};
-export const d1: C64Symbol = {
+}; // s1
+export const hD3: C64Symbol = {}; // s2
+export const hAC: C64Symbol = {
     rectangles: [
         {
             x: dim.boxWidth/2,
@@ -301,8 +300,8 @@ export const d1: C64Symbol = {
             stroke: true
         },
     ]
-};
-export const d2: C64Symbol = {
+}; // d1
+export const hC4: C64Symbol = {
     lines: [
         {
             x1: 0,
@@ -311,8 +310,8 @@ export const d2: C64Symbol = {
             y2: dim.boxHeight/7*2
         }
     ]
-};
-export const f1: C64Symbol = {
+}; // d2
+export const hBB: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -323,8 +322,8 @@ export const f1: C64Symbol = {
             stroke: true
         },
     ]
-};
-export const f2: C64Symbol = {
+}; // f1
+export const hC6: C64Symbol = {
     lines: [
         {
             x1: 0,
@@ -333,20 +332,19 @@ export const f2: C64Symbol = {
             y2: dim.boxHeight/7*5
         }
     ]
-};
-export const g1: C64Symbol = {};
-export const g2: C64Symbol = {};
-export const h1: C64Symbol = {};
-export const h2: C64Symbol = {};
-export const j1: C64Symbol = {};
-export const j2: C64Symbol = {};
-export const k1: C64Symbol = {};
-export const k2: C64Symbol = {};
-export const l1: C64Symbol = {};
-export const l2: C64Symbol = {};
-
-export const z1: C64Symbol = {};
-export const z2: C64Symbol = {
+}; // f2
+export const hA5: C64Symbol = {}; // g1
+export const hC7: C64Symbol = {}; // g2
+export const hB4: C64Symbol = {}; // h1
+export const hC8: C64Symbol = {}; // h2
+export const hB5: C64Symbol = {}; // j1
+export const hCA: C64Symbol = {}; // j2
+export const hA1: C64Symbol = {}; // k1
+export const hCB: C64Symbol = {}; // k2
+export const hB6: C64Symbol = {}; // l1
+export const hCC: C64Symbol = {}; // l2
+export const hAD: C64Symbol = {}; // z1
+export const hDA: C64Symbol = {
     paths: [
         {
             d: `M${dim.boxWidth/2} 0
@@ -358,25 +356,24 @@ export const z2: C64Symbol = {
             stroke: false
         },
     ]
-};
-export const x1: C64Symbol = {};
-export const x2: C64Symbol = {};
-export const c1: C64Symbol = {};
-export const c2: C64Symbol = {};
-export const v1: C64Symbol = {};
-export const v2: C64Symbol = {};
-export const b1: C64Symbol = {};
-export const b2: C64Symbol = {};
-export const n1: C64Symbol = {};
-export const n2: C64Symbol = {};
-export const m1: C64Symbol = {};
-export const m2: C64Symbol = {};
-
-export const pl1: C64Symbol = {};
-export const pl2: C64Symbol = {};
-export const mi1: C64Symbol = {};
-export const mi2: C64Symbol = {};
-export const et1: C64Symbol = {
+}; // z2
+export const hBD: C64Symbol = {}; // x1
+export const hD8: C64Symbol = {}; // x2
+export const hBC: C64Symbol = {}; // c1
+export const hC3: C64Symbol = {}; // c2
+export const hBE: C64Symbol = {}; // v1
+export const hD6: C64Symbol = {}; // v2
+export const hBF: C64Symbol = {}; // b1
+export const hC2: C64Symbol = {}; // b2
+export const hA7: C64Symbol = {}; // n1
+export const hCE: C64Symbol = {}; // n2
+export const hAA: C64Symbol = {}; // m1
+export const hCD: C64Symbol = {}; // m2
+export const hA6: C64Symbol = {}; // pl1
+export const hDB: C64Symbol = {}; // pl2
+export const hDC: C64Symbol = {}; // mi1
+export const hDD: C64Symbol = {}; // mi2
+export const hA4: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -387,8 +384,8 @@ export const et1: C64Symbol = {
             stroke: false
         }
     ]
-};
-export const et2: C64Symbol = {
+}; // et1
+export const hBA: C64Symbol = {
     rectangles: [
         {
             x: 0,
@@ -407,6 +404,8 @@ export const et2: C64Symbol = {
             stroke: false
         }
     ]
-};
-export const st1: C64Symbol = {};
-export const st2: C64Symbol = {};
+}; // et2
+export const hDF: C64Symbol = {}; // st1
+export const hC0: C64Symbol = {}; // st2
+export const hA8: C64Symbol = {}; // pd1
+export const hA9: C64Symbol = {}; // pd2
