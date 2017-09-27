@@ -10,6 +10,7 @@ export interface SvgLine {
     y1: number;
     x2: number;
     y2: number;
+    width?: number;
 }
 
 export interface SvgRectangle {

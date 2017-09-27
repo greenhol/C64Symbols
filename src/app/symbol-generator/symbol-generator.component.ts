@@ -164,7 +164,8 @@ export class SymbolGeneratorComponent {
         .attr('x2', (d: SvgLine) => d.x2)
         .attr('y2', (d: SvgLine) => d.y2)
         .style('stroke', dim.color)
-        .style('stroke-width', dim.strokeWidth);
+        .style('stroke-linecap', 'round')
+        .style('stroke-width', (d: SvgLine) => d.width ? d.width : dim.strokeWidth);
     }
     // Update Circles
     shape = 'circle';
