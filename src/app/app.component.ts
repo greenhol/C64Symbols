@@ -14,6 +14,7 @@ interface SymbolElement {
 export class AppComponent implements AfterViewInit {
 
   public symbolList: SymbolElement[] = [
+    { hex: '', key: 'All' },
     { hex: 'AB', key: 'Q (l)' },
     { hex: 'D1', key: 'Q (r)' },
     { hex: 'B3', key: 'W (l)' },
@@ -86,7 +87,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   public ngAfterViewInit() {
-    this.generateDownloadUrl();
+    this.onDropDownChange(this.symbol);
   }
 
   public onDropDownChange(value: SymbolElement) {

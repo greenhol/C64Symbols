@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit, ElementRef } from '@angular/core';
+import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
 import { D3Service, D3, Selection } from 'd3-ng2-service';
 import { dim } from './../data/dimensions';
 import { C64Symbol, SvgLine, SvgRectangle, SvgCircle, SvgPath } from './../data/types';
@@ -14,7 +14,7 @@ import {
   template: ``,
   encapsulation: ViewEncapsulation.None
 })
-export class SymbolGeneratorComponent implements OnInit {
+export class SymbolGeneratorComponent {
 
   public get svgElement(): Element {
     return this.element.nativeElement.querySelector('svg');
@@ -24,7 +24,6 @@ export class SymbolGeneratorComponent implements OnInit {
   private el: Element;
   private svg: any;
   private svgg: any;
-  private allSymbos: C64Symbol[] = [];
   private allSymbols: Map<string, C64Symbol> = new Map();
   private cnt = 0;
 
@@ -94,29 +93,57 @@ export class SymbolGeneratorComponent implements OnInit {
     this.allSymbols.set('A9', hA9);
   }
 
-  ngOnInit() {
-    const data: C64Symbol = hAB;
-    this.svg = this.d3.select(this.element.nativeElement)
-      .append('svg')
-      .style("width", dim.boxWidth + 20)
-      .style("height", dim.boxWidth + 20);
-
-    this.svgg = this.svg.append('g')
-      .attr('transform', 'translate(10.5, 10.5)');
-
-    // Create Box
-    this.svgg.append('rect')
-      .attr('width', dim.boxWidth)
-      .attr('height', dim.boxHeight)
-      .style('stroke-width', dim.strokeWidth)
-      .style('fill', 'none')
-      .style('stroke', 'black');
-
-    this.createSymbol(this.allSymbols.get('AB'));
-  }
-
   public drawSymbol(name: string): void {
-    this.createSymbol(this.allSymbols.get(name));
+
+    this.d3.select("svg").remove();
+    
+    if (name) {
+      this.svg = this.d3.select(this.element.nativeElement)
+        .append('svg')
+        .style("width", dim.boxWidth + 20)
+        .style("height", dim.boxHeight + 20);
+  
+      // Group
+      this.svgg = this.svg.append('g')
+        .attr('transform', 'translate(10.5, 10.5)');
+  
+      // Create Box
+      this.svgg.append('rect')
+        .attr('width', dim.boxWidth)
+        .attr('height', dim.boxHeight)
+        .style('stroke-width', dim.strokeWidth)
+        .style('fill', 'none')
+        .style('stroke', 'black');
+  
+      this.createSymbol(this.allSymbols.get(name));
+
+    } else {
+      this.svg = this.d3.select(this.element.nativeElement)
+        .append('svg')
+        .style("width", this.allSymbols.size * (dim.boxWidth + 20))
+        .style("height", dim.boxHeight + 20);
+
+      let cnt = 0;
+      this.allSymbols.forEach((value: C64Symbol, key: string) => {
+        console.log(key, value);
+
+        // Group
+        const horizontalPosition = 10.5 + cnt * (dim.boxWidth + 20);
+        this.svgg = this.svg.append('g')
+          .attr('transform', `translate(${horizontalPosition}, 10.5)`);
+
+        // Create Box
+        this.svgg.append('rect')
+          .attr('width', dim.boxWidth)
+          .attr('height', dim.boxHeight)
+          .style('stroke-width', dim.strokeWidth)
+          .style('fill', 'none')
+          .style('stroke', 'black');
+
+        this.createSymbol(this.allSymbols.get(key));
+        cnt++;        
+      });
+    }
   }
 
   private createSymbol(symbol: C64Symbol): void {
