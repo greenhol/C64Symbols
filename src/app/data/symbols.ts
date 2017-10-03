@@ -275,7 +275,47 @@ export const hB0: C64Symbol = {
         },
     ]
 }; // a1
-export const hC1: C64Symbol = {}; // a2
+export const hC1: C64Symbol = {
+    circles: [
+        {
+            cx: 0.25 * dim.boxWidth,
+            cy: 0.625 * dim.boxHeight,
+            r: 0.2 * dim.boxWidth,
+            fill: true,
+            stroke: false
+        },
+        {
+            cx: 0.75 * dim.boxWidth,
+            cy: 0.625 * dim.boxHeight,
+            r: 0.2 * dim.boxWidth,
+            fill: true,
+            stroke: false
+        }
+    ],
+    paths: [
+        {
+            d: `M${0.5 * dim.boxWidth} 0
+            L${0.906 * dim.boxWidth} ${0.5 * dim.boxHeight}
+            L${0.65 * dim.boxWidth} ${0.8 * dim.boxHeight}
+            L${0.35 * dim.boxWidth} ${0.8 * dim.boxHeight}
+            L${0.094 * dim.boxWidth} ${0.5 * dim.boxHeight}
+            Z`,
+            fill: true,
+            stroke: false
+        },
+        {
+            d: `M${0.25 * dim.boxWidth} ${1 * dim.boxHeight}
+            L${0.4 * dim.boxWidth} ${0.95 * dim.boxHeight}
+            L${0.4 * dim.boxWidth} ${0.625 * dim.boxHeight}
+            L${0.6 * dim.boxWidth} ${0.625 * dim.boxHeight}
+            L${0.6 * dim.boxWidth} ${0.95 * dim.boxHeight}
+            L${0.75 * dim.boxWidth} ${1 * dim.boxHeight}
+            Z`,
+            fill: true,
+            stroke: true
+        }
+    ]
+}; // a2
 export const hAE: C64Symbol = {
     rectangles: [
         {
@@ -288,7 +328,36 @@ export const hAE: C64Symbol = {
         },
     ]
 }; // s1
-export const hD3: C64Symbol = {}; // s2
+export const hD3: C64Symbol = {
+    circles: [
+        {
+            cx: 0.325 * dim.boxWidth,
+            cy: 0.325 * dim.boxHeight,
+            r: 0.275 * dim.boxWidth,
+            fill: true,
+            stroke: false
+        },
+        {
+            cx: 0.675 * dim.boxWidth,
+            cy: 0.325 * dim.boxHeight,
+            r: 0.275 * dim.boxWidth,
+            fill: true,
+            stroke: false
+        }
+    ],
+    paths: [
+        {
+            d: `M${0.5 * dim.boxWidth} ${1 * dim.boxHeight}
+            L${0.105 * dim.boxWidth} ${0.49 * dim.boxHeight}
+            L${0.325 * dim.boxWidth} ${0.325 * dim.boxHeight}
+            L${0.675 * dim.boxWidth} ${0.325 * dim.boxHeight}
+            L${0.895 * dim.boxWidth} ${0.49 * dim.boxHeight}
+            Z`,
+            fill: true,
+            stroke: false
+        }
+    ]
+}; // s2
 export const hAC: C64Symbol = {
     rectangles: [
         {
@@ -494,7 +563,44 @@ export const hBD: C64Symbol = {
         },
     ]
 }; // x1
-export const hD8: C64Symbol = {}; // x2
+export const hD8: C64Symbol = {
+    circles: [
+        {
+            cx: 0.5 * dim.boxWidth,
+            cy: 0.275 * dim.boxHeight,
+            r: 0.225 * dim.boxWidth,
+            fill: true,
+            stroke: false
+        },
+        {
+            cx: 0.275 * dim.boxWidth,
+            cy: 0.65 * dim.boxHeight,
+            r: 0.225 * dim.boxWidth,
+            fill: true,
+            stroke: false
+        },
+        {
+            cx: 0.725 * dim.boxWidth,
+            cy: 0.65 * dim.boxHeight,
+            r: 0.225 * dim.boxWidth,
+            fill: true,
+            stroke: false
+        }
+    ],
+    paths: [
+        {
+            d: `M${0.25 * dim.boxWidth} ${1 * dim.boxHeight}
+            L${0.4 * dim.boxWidth} ${0.95 * dim.boxHeight}
+            L${0.4 * dim.boxWidth} ${0.275 * dim.boxHeight}
+            L${0.6 * dim.boxWidth} ${0.2755 * dim.boxHeight}
+            L${0.6 * dim.boxWidth} ${0.95 * dim.boxHeight}
+            L${0.75 * dim.boxWidth} ${1 * dim.boxHeight}
+            Z`,
+            fill: true,
+            stroke: true
+        }
+    ]
+}; // x2
 export const hBC: C64Symbol = {
     rectangles: [
         {
@@ -536,14 +642,14 @@ export const hD6: C64Symbol = {
             y1: 0.55*dim.strokeWidth,
             x2: dim.boxWidth-0.55*dim.strokeWidth,
             y2: dim.boxHeight-0.55*dim.strokeWidth,
-            width: dim.strokeWidth*1.66
+            strokeWidth: dim.strokeWidth*1.66
         },
         {
             x1: 0.55*dim.strokeWidth,
             y1: dim.boxHeight-0.55*dim.strokeWidth,
             x2: dim.boxWidth-0.55*dim.strokeWidth,
             y2: 0.55*dim.strokeWidth,
-            width: dim.strokeWidth*1.66
+            strokeWidth: dim.strokeWidth*1.66
         }
     ]
 }; // v2
@@ -596,7 +702,7 @@ export const hCE: C64Symbol = {
             y1: dim.boxHeight-0.55*dim.strokeWidth,
             x2: dim.boxWidth-0.55*dim.strokeWidth,
             y2: 0.55*dim.strokeWidth,
-            width: dim.strokeWidth*1.66
+            strokeWidth: dim.strokeWidth*1.66
         }
     ]
 }; // n2
@@ -619,7 +725,7 @@ export const hCD: C64Symbol = {
             y1: 0.55*dim.strokeWidth,
             x2: dim.boxWidth-0.55*dim.strokeWidth,
             y2: dim.boxHeight-0.55*dim.strokeWidth,
-            width: dim.strokeWidth*1.66
+            strokeWidth: dim.strokeWidth*1.66
         }
     ]
 }; // m2
@@ -825,24 +931,8 @@ export const hA8: C64Symbol = {
     ],
     rectangles: [
         {
-            x: 0,
-            y: 2*(dim.boxHeight-dim.strokeWidth)/4,
-            width: (dim.boxWidth-dim.strokeWidth)/4 + dim.strokeWidth/2,
-            height:(dim.boxHeight-dim.strokeWidth)/4 + dim.strokeWidth/2,
-            fill: true,
-            stroke: false
-        },
-        {
-            x: dim.strokeWidth/2 + 2*(dim.boxWidth-dim.strokeWidth)/4,
-            y: 2*(dim.boxHeight-dim.strokeWidth)/4,
-            width: (dim.boxWidth-dim.strokeWidth)/4,
-            height:(dim.boxHeight-dim.strokeWidth)/4 + dim.strokeWidth/2,
-            fill: true,
-            stroke: false
-        },
-        {
             x: dim.strokeWidth/2 + 1*(dim.boxWidth-dim.strokeWidth)/4,
-            y: dim.strokeWidth/2 + 3*(dim.boxHeight-dim.strokeWidth)/4,
+            y: 2*(dim.boxHeight-dim.strokeWidth)/4,
             width: (dim.boxWidth-dim.strokeWidth)/4,
             height:(dim.boxHeight-dim.strokeWidth)/4 + dim.strokeWidth/2,
             fill: true,
@@ -850,8 +940,24 @@ export const hA8: C64Symbol = {
         },
         {
             x: dim.strokeWidth/2 + 3*(dim.boxWidth-dim.strokeWidth)/4,
+            y: 2*(dim.boxHeight-dim.strokeWidth)/4,
+            width: (dim.boxWidth-dim.strokeWidth)/4 + dim.strokeWidth/2,
+            height:(dim.boxHeight-dim.strokeWidth)/4 + dim.strokeWidth/2,
+            fill: true,
+            stroke: false
+        },
+        {
+            x: 0,
             y: dim.strokeWidth/2 + 3*(dim.boxHeight-dim.strokeWidth)/4,
             width: (dim.boxWidth-dim.strokeWidth)/4 + dim.strokeWidth/2,
+            height:(dim.boxHeight-dim.strokeWidth)/4 + dim.strokeWidth/2,
+            fill: true,
+            stroke: false
+        },
+        {
+            x: dim.strokeWidth/2 + 2*(dim.boxWidth-dim.strokeWidth)/4,
+            y: dim.strokeWidth/2 + 3*(dim.boxHeight-dim.strokeWidth)/4,
+            width: (dim.boxWidth-dim.strokeWidth)/4,
             height:(dim.boxHeight-dim.strokeWidth)/4 + dim.strokeWidth/2,
             fill: true,
             stroke: false

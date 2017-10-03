@@ -10,7 +10,7 @@ export interface SvgLine {
     y1: number;
     x2: number;
     y2: number;
-    width?: number;
+    strokeWidth?: number;
 }
 
 export interface SvgRectangle {
@@ -20,6 +20,7 @@ export interface SvgRectangle {
     height: number;
     fill: boolean;
     stroke: boolean;
+    strokeWidth?: number;
 }
 
 export interface SvgCircle {
@@ -28,10 +29,16 @@ export interface SvgCircle {
     r: number;
     fill: boolean;
     stroke: boolean;
+    strokeWidth?: number;
 }
 
 export interface SvgPath {
     d: string;
     fill: boolean;
     stroke: boolean;
+    strokeWidth?: number;
+}
+
+export function isNumber(value: any): boolean {
+    return typeof value === 'number';
 }

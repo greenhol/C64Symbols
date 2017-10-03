@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
 import { D3Service, D3, Selection } from 'd3-ng2-service';
 import { dim } from './../data/dimensions';
-import { C64Symbol, SvgLine, SvgRectangle, SvgCircle, SvgPath } from './../data/types';
+import { C64Symbol, SvgLine, SvgRectangle, SvgCircle, SvgPath, isNumber} from './../data/types';
 import {
   hAB, hD1, hB3, hD7, hB1, hC5, hB2, hD2, hA3, hD4, hB7, hD9, hB8, hD5, hA2, hC9, hB9,
   hCF, hAF, hD0, hB0, hC1, hAE, hD3, hAC, hC4, hBB, hC6, hA5, hC7, hB4, hC8, hB5, hCA,
@@ -165,7 +165,7 @@ export class SymbolGeneratorComponent {
         .attr('y2', (d: SvgLine) => d.y2)
         .style('stroke', dim.color)
         .style('stroke-linecap', 'round')
-        .style('stroke-width', (d: SvgLine) => d.width ? d.width : dim.strokeWidth);
+        .style('stroke-width', (d: SvgLine) => isNumber(d.strokeWidth) ? d.strokeWidth : dim.strokeWidth);
     }
     // Update Circles
     shape = 'circle';
@@ -182,7 +182,7 @@ export class SymbolGeneratorComponent {
         .attr('r', (d: SvgCircle) => d.r)
         .style('stroke', (d: SvgCircle) => d.stroke ? 'black' : 'none')
         .style('fill', (d: SvgCircle) => d.fill ? 'black' : 'none')
-        .style('stroke-width', dim.strokeWidth);
+        .style('stroke-width', (d: SvgLine) => isNumber(d.strokeWidth) ? d.strokeWidth : dim.strokeWidth);
     }    
     // Update Rectangles
     shape = 'rect';
@@ -200,7 +200,7 @@ export class SymbolGeneratorComponent {
         .attr('height', (d: SvgRectangle) => d.height)
         .style('stroke', (d: SvgCircle) => d.stroke ? 'black' : 'none')
         .style('fill', (d: SvgCircle) => d.fill ? 'black' : 'none')
-        .style('stroke-width', dim.strokeWidth);
+        .style('stroke-width', (d: SvgLine) => isNumber(d.strokeWidth) ? d.strokeWidth : dim.strokeWidth);
     }
     // Update Paths
     shape = 'path';
@@ -215,7 +215,7 @@ export class SymbolGeneratorComponent {
         .attr('d', (d: SvgPath) => d.d)
         .style('stroke', (d: SvgPath) => d.stroke ? 'black' : 'none')
         .style('fill', (d: SvgPath) => d.fill ? 'black' : 'none')
-        .style('stroke-width', dim.strokeWidth);
+        .style('stroke-width', (d: SvgLine) => isNumber(d.strokeWidth) ? d.strokeWidth : dim.strokeWidth);
     }    
   }
 }
