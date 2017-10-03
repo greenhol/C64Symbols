@@ -1,28 +1,19 @@
 # C64Symbols
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+## Synopsis
 
-## Development server
+A simple [angular](https://angular.io/) App for rendering and exporting C64 Symbols as svg. C64 Symbols being the ones printed on the KeyCaps. They can be referenced by [PETSCII codes](http://sta.c64.org/cbm64pet.html).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+For making handling svg the biggest pleasure possible the [best JavaScript Library ever created](https://d3js.org/) was utilized. For usage in combination with angular [d3-ng2-service](https://github.com/tomwanzek/d3-ng2-service) was used.
 
-## Code scaffolding
+## Installation & Running the App
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+1. Clone this
+2. Install [angular cli](https://github.com/angular/angular-cli)
+3. npm install
+4. ng serve
+5. [http://localhost:4200](http://localhost:4200)
 
-## Build
+## Sample
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![](./Screenshot.png "C64Symbols")
