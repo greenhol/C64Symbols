@@ -1,4 +1,5 @@
 export interface C64Symbol {
+    displayName: string;
     lines?: SvgLine[];
     rectangles?: SvgRectangle[];
     circles?: SvgCircle[];

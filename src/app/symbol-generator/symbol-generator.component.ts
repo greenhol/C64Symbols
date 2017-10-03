@@ -2,12 +2,7 @@ import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
 import { D3Service, D3, Selection } from 'd3-ng2-service';
 import { dim } from './../data/dimensions';
 import { C64Symbol, SvgLine, SvgRectangle, SvgCircle, SvgPath, isNumber} from './../data/types';
-import {
-  hAB, hD1, hB3, hD7, hB1, hC5, hB2, hD2, hA3, hD4, hB7, hD9, hB8, hD5, hA2, hC9, hB9,
-  hCF, hAF, hD0, hB0, hC1, hAE, hD3, hAC, hC4, hBB, hC6, hA5, hC7, hB4, hC8, hB5, hCA,
-  hA1, hCB, hB6, hCC, hAD, hDA, hBD, hD8, hBC, hC3, hBE, hD6, hBF, hC2, hA7, hCE, hAA,
-  hCD, hA6, hDB, hDC, hDD, hA4, hBA, hDF, hC0, hA8, hA9
-} from './../data/symbols';
+import { symbols } from './../data/symbols';
 
 @Component({
   selector: 'app-symbol-generator',
@@ -24,73 +19,10 @@ export class SymbolGeneratorComponent {
   private el: Element;
   private svg: any;
   private svgg: any;
-  private allSymbols: Map<string, C64Symbol> = new Map();
   private cnt = 0;
 
   constructor(private element: ElementRef, d3Service: D3Service) {
     this.d3 = d3Service.getD3();
-    this.allSymbols.set('AB', hAB);
-    this.allSymbols.set('D1', hD1);
-    this.allSymbols.set('B3', hB3);
-    this.allSymbols.set('D7', hD7);
-    this.allSymbols.set('B1', hB1);
-    this.allSymbols.set('C5', hC5);
-    this.allSymbols.set('B2', hB2);
-    this.allSymbols.set('D2', hD2);
-    this.allSymbols.set('A3', hA3);
-    this.allSymbols.set('D4', hD4);
-    this.allSymbols.set('B7', hB7);
-    this.allSymbols.set('D9', hD9);
-    this.allSymbols.set('B8', hB8);
-    this.allSymbols.set('D5', hD5);
-    this.allSymbols.set('A2', hA2);
-    this.allSymbols.set('C9', hC9);
-    this.allSymbols.set('B9', hB9);
-    this.allSymbols.set('CF', hCF);
-    this.allSymbols.set('AF', hAF);
-    this.allSymbols.set('D0', hD0);
-    this.allSymbols.set('B0', hB0);
-    this.allSymbols.set('C1', hC1);
-    this.allSymbols.set('AE', hAE);
-    this.allSymbols.set('D3', hD3);
-    this.allSymbols.set('AC', hAC);
-    this.allSymbols.set('C4', hC4);
-    this.allSymbols.set('BB', hBB);
-    this.allSymbols.set('C6', hC6);
-    this.allSymbols.set('A5', hA5);
-    this.allSymbols.set('C7', hC7);
-    this.allSymbols.set('B4', hB4);
-    this.allSymbols.set('C8', hC8);
-    this.allSymbols.set('B5', hB5);
-    this.allSymbols.set('CA', hCA);
-    this.allSymbols.set('A1', hA1);
-    this.allSymbols.set('CB', hCB);
-    this.allSymbols.set('B6', hB6);
-    this.allSymbols.set('CC', hCC);
-    this.allSymbols.set('AD', hAD);
-    this.allSymbols.set('DA', hDA);
-    this.allSymbols.set('BD', hBD);
-    this.allSymbols.set('D8', hD8);
-    this.allSymbols.set('BC', hBC);
-    this.allSymbols.set('C3', hC3);
-    this.allSymbols.set('BE', hBE);
-    this.allSymbols.set('D6', hD6);
-    this.allSymbols.set('BF', hBF);
-    this.allSymbols.set('C2', hC2);
-    this.allSymbols.set('A7', hA7);
-    this.allSymbols.set('CE', hCE);
-    this.allSymbols.set('AA', hAA);
-    this.allSymbols.set('CD', hCD);
-    this.allSymbols.set('A6', hA6);
-    this.allSymbols.set('DB', hDB);
-    this.allSymbols.set('DC', hDC);
-    this.allSymbols.set('DD', hDD);
-    this.allSymbols.set('A4', hA4);
-    this.allSymbols.set('BA', hBA);
-    this.allSymbols.set('DF', hDF);
-    this.allSymbols.set('C0', hC0);
-    this.allSymbols.set('A8', hA8);
-    this.allSymbols.set('A9', hA9);
   }
 
   public drawSymbol(name: string): void {
@@ -115,16 +47,16 @@ export class SymbolGeneratorComponent {
         .style('fill', 'none')
         .style('stroke', 'black');
   
-      this.createSymbol(this.allSymbols.get(name));
+      this.createSymbol(symbols.get(name));
 
     } else {
       this.svg = this.d3.select(this.element.nativeElement)
         .append('svg')
-        .style("width", this.allSymbols.size * (dim.boxWidth + 20))
+        .style("width", symbols.size * (dim.boxWidth + 20))
         .style("height", dim.boxHeight + 20);
 
       let cnt = 0;
-      this.allSymbols.forEach((value: C64Symbol, key: string) => {
+      symbols.forEach((value: C64Symbol, key: string) => {
         console.log(key, value);
 
         // Group
@@ -140,7 +72,7 @@ export class SymbolGeneratorComponent {
           .style('fill', 'none')
           .style('stroke', 'black');
 
-        this.createSymbol(this.allSymbols.get(key));
+        this.createSymbol(symbols.get(key));
         cnt++;        
       });
     }

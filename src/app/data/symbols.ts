@@ -1,7 +1,8 @@
 import { dim } from './dimensions';
 import { C64Symbol } from './types';
 
-export const hAB: C64Symbol = {
+const hAB: C64Symbol = {
+    displayName: 'Q (l)',
     lines: [
         {
             x1: dim.boxWidth/2,
@@ -17,7 +18,8 @@ export const hAB: C64Symbol = {
         }
     ]
 }; // q1
-export const hD1: C64Symbol = {
+const hD1: C64Symbol = {
+    displayName: 'Q (r)',
     circles: [
         {
             cx: dim.boxWidth/2,
@@ -28,7 +30,8 @@ export const hD1: C64Symbol = {
         },
     ]
 }; // q2
-export const hB3: C64Symbol = {
+const hB3: C64Symbol = {
+    displayName: 'W (l)',
     lines: [
         {
             x1: dim.boxWidth/2,
@@ -44,7 +47,8 @@ export const hB3: C64Symbol = {
         }
     ]
 }; // w1
-export const hD7: C64Symbol = {
+const hD7: C64Symbol = {
+    displayName: 'W (r)',
     circles: [
         {
             cx: dim.boxWidth/2,
@@ -55,7 +59,8 @@ export const hD7: C64Symbol = {
         },
     ]
 }; // w2
-export const hB1: C64Symbol = {
+const hB1: C64Symbol = {
+    displayName: 'E (l)',    
     lines: [
         {
             x1: dim.boxWidth/2,
@@ -71,7 +76,8 @@ export const hB1: C64Symbol = {
         }
     ]
 }; // e1
-export const hC5: C64Symbol = {
+const hC5: C64Symbol = {
+    displayName: 'E (r)',
     lines: [
         {
             x1: 0,
@@ -81,7 +87,8 @@ export const hC5: C64Symbol = {
         }
     ]
 }; // e2
-export const hB2: C64Symbol = {
+const hB2: C64Symbol = {
+    displayName: 'R (l)',
     lines: [
         {
             x1: dim.boxWidth/2,
@@ -97,7 +104,8 @@ export const hB2: C64Symbol = {
         }
     ]
 }; // r1
-export const hD2: C64Symbol = {
+const hD2: C64Symbol = {
+    displayName: 'R (r)',
     lines: [
         {
             x1: 0,
@@ -107,7 +115,8 @@ export const hD2: C64Symbol = {
         }
     ]
 }; // r2
-export const hA3: C64Symbol = {
+const hA3: C64Symbol = {
+    displayName: 'T (l)',
     rectangles: [
         {
             x: 0,
@@ -119,7 +128,8 @@ export const hA3: C64Symbol = {
         }
     ]
 }; // t1
-export const hD4: C64Symbol = {
+const hD4: C64Symbol = {
+    displayName: 'T (r)',
     lines: [
         {
             x1: dim.boxWidth/7*1,
@@ -129,7 +139,8 @@ export const hD4: C64Symbol = {
         }
     ]
 }; // t2
-export const hB7: C64Symbol = {
+const hB7: C64Symbol = {
+    displayName: 'Y (l)',
     rectangles: [
         {
             x: 0,
@@ -141,7 +152,8 @@ export const hB7: C64Symbol = {
         }
     ]
 }; // y1
-export const hD9: C64Symbol = {
+const hD9: C64Symbol = {
+    displayName: 'Y (r)',
     lines: [
         {
             x1: dim.boxWidth/7*6,
@@ -151,7 +163,8 @@ export const hD9: C64Symbol = {
         }
     ]
 }; // y2
-export const hB8: C64Symbol = {
+const hB8: C64Symbol = {
+    displayName: 'U (l)',
     rectangles: [
         {
             x: 0,
@@ -163,7 +176,8 @@ export const hB8: C64Symbol = {
         }
     ]
 }; // u1
-export const hD5: C64Symbol = {
+const hD5: C64Symbol = {
+    displayName: 'U (r)',
     paths: [
         {
             d: `M${dim.boxWidth} ${dim.boxHeight/2-dim.strokeWidth}
@@ -175,7 +189,8 @@ export const hD5: C64Symbol = {
         }
     ]
 }; // u2
-export const hA2: C64Symbol = {
+const hA2: C64Symbol = {
+    displayName: 'I (l)',
     rectangles: [
         {
             x: 0,
@@ -187,7 +202,8 @@ export const hA2: C64Symbol = {
         }
     ]
 }; // i1
-export const hC9: C64Symbol = {
+const hC9: C64Symbol = {
+    displayName: 'I (r)',
     paths: [
         {
             d: `M0 ${dim.boxHeight/2-dim.strokeWidth}
@@ -199,7 +215,8 @@ export const hC9: C64Symbol = {
         }
     ]
 }; // i2
-export const hB9: C64Symbol = {
+const hB9: C64Symbol = {
+    displayName: 'O (l)',
     rectangles: [
         {
             x: 0,
@@ -211,7 +228,8 @@ export const hB9: C64Symbol = {
         }
     ]
 }; // o1
-export const hCF: C64Symbol = {
+const hCF: C64Symbol = {
+    displayName: 'O (r)',
     rectangles: [
         {
             x: 0,
@@ -231,7 +249,8 @@ export const hCF: C64Symbol = {
         }
     ]
 }; // o2
-export const hAF: C64Symbol = {
+const hAF: C64Symbol = {
+    displayName: 'P (l)',
     rectangles: [
         {
             x: 0,
@@ -243,7 +262,8 @@ export const hAF: C64Symbol = {
         }
     ]
 }; // p1
-export const hD0: C64Symbol = {
+const hD0: C64Symbol = {
+    displayName: 'P (r)',
     rectangles: [
         {
             x: 0,
@@ -263,7 +283,8 @@ export const hD0: C64Symbol = {
         }
     ]
 }; // p2
-export const hB0: C64Symbol = {
+const hB0: C64Symbol = {
+    displayName: 'A (l)',
     rectangles: [
         {
             x: dim.boxWidth/2,
@@ -275,7 +296,8 @@ export const hB0: C64Symbol = {
         },
     ]
 }; // a1
-export const hC1: C64Symbol = {
+const hC1: C64Symbol = {
+    displayName: 'A (r)',
     circles: [
         {
             cx: 0.25 * dim.boxWidth,
@@ -316,7 +338,8 @@ export const hC1: C64Symbol = {
         }
     ]
 }; // a2
-export const hAE: C64Symbol = {
+const hAE: C64Symbol = {
+    displayName: 'S (l)',
     rectangles: [
         {
             x: 0,
@@ -328,7 +351,8 @@ export const hAE: C64Symbol = {
         },
     ]
 }; // s1
-export const hD3: C64Symbol = {
+const hD3: C64Symbol = {
+    displayName: 'S (r)',
     circles: [
         {
             cx: 0.325 * dim.boxWidth,
@@ -358,7 +382,8 @@ export const hD3: C64Symbol = {
         }
     ]
 }; // s2
-export const hAC: C64Symbol = {
+const hAC: C64Symbol = {
+    displayName: 'D (l)',
     rectangles: [
         {
             x: dim.boxWidth/2,
@@ -370,7 +395,8 @@ export const hAC: C64Symbol = {
         },
     ]
 }; // d1
-export const hC4: C64Symbol = {
+const hC4: C64Symbol = {
+    displayName: 'D (r)',
     lines: [
         {
             x1: 0,
@@ -380,7 +406,8 @@ export const hC4: C64Symbol = {
         }
     ]
 }; // d2
-export const hBB: C64Symbol = {
+const hBB: C64Symbol = {
+    displayName: 'F (l)',
     rectangles: [
         {
             x: 0,
@@ -392,7 +419,8 @@ export const hBB: C64Symbol = {
         },
     ]
 }; // f1
-export const hC6: C64Symbol = {
+const hC6: C64Symbol = {
+    displayName: 'F (r)',
     lines: [
         {
             x1: 0,
@@ -402,7 +430,8 @@ export const hC6: C64Symbol = {
         }
     ]
 }; // f2
-export const hA5: C64Symbol = {
+const hA5: C64Symbol = {
+    displayName: 'G (l)',
     rectangles: [
         {
             x: 0,
@@ -414,7 +443,8 @@ export const hA5: C64Symbol = {
         }
     ]
 }; // g1
-export const hC7: C64Symbol = {
+const hC7: C64Symbol = {
+    displayName: 'G (r)',
     lines: [
         {
             x1: dim.boxWidth/7*2,
@@ -424,7 +454,8 @@ export const hC7: C64Symbol = {
         }
     ]
 }; // g2
-export const hB4: C64Symbol = {
+const hB4: C64Symbol = {
+    displayName: 'H (l)',
     rectangles: [
         {
             x: 0,
@@ -436,7 +467,8 @@ export const hB4: C64Symbol = {
         }
     ]
 }; // h1
-export const hC8: C64Symbol = {
+const hC8: C64Symbol = {
+    displayName: 'H (r)',
     lines: [
         {
             x1: dim.boxWidth/7*5,
@@ -446,7 +478,8 @@ export const hC8: C64Symbol = {
         }
     ]
 }; // h2
-export const hB5: C64Symbol = {
+const hB5: C64Symbol = {
+    displayName: 'J (l)',
     rectangles: [
         {
             x: 0,
@@ -458,7 +491,8 @@ export const hB5: C64Symbol = {
         }
     ]
 }; // j1
-export const hCA: C64Symbol = {
+const hCA: C64Symbol = {
+    displayName: 'J (r)',
     paths: [
         {
             d: `M${dim.boxWidth/2-dim.strokeWidth} 0
@@ -470,7 +504,8 @@ export const hCA: C64Symbol = {
         }
     ]
 }; // j2
-export const hA1: C64Symbol = {
+const hA1: C64Symbol = {
+    displayName: 'K (l)',
     rectangles: [
         {
             x: 0,
@@ -482,7 +517,8 @@ export const hA1: C64Symbol = {
         }
     ]
 }; // k1
-export const hCB: C64Symbol = {
+const hCB: C64Symbol = {
+    displayName: 'K (r)',
     paths: [
         {
             d: `M${dim.boxWidth/2+dim.strokeWidth} 0
@@ -494,7 +530,8 @@ export const hCB: C64Symbol = {
         }
     ]
 }; // k2
-export const hB6: C64Symbol = {
+const hB6: C64Symbol = {
+    displayName: 'L (l)',
     rectangles: [
         {
             x: dim.boxWidth/8*5,
@@ -506,7 +543,8 @@ export const hB6: C64Symbol = {
         }
     ]
 }; // l1
-export const hCC: C64Symbol = {
+const hCC: C64Symbol = {
+    displayName: 'L (r)',
     rectangles: [
         {
             x: 0,
@@ -526,7 +564,8 @@ export const hCC: C64Symbol = {
         }
     ]
 }; // l2
-export const hAD: C64Symbol = {
+const hAD: C64Symbol = {
+    displayName: 'Z (l)',
     rectangles: [
         {
             x: dim.boxWidth/2,
@@ -538,7 +577,8 @@ export const hAD: C64Symbol = {
         },
     ]
 }; // z1
-export const hDA: C64Symbol = {
+const hDA: C64Symbol = {
+    displayName: 'Z (r)',
     paths: [
         {
             d: `M${dim.boxWidth/2} 0
@@ -551,7 +591,8 @@ export const hDA: C64Symbol = {
         },
     ]
 }; // z2
-export const hBD: C64Symbol = {
+const hBD: C64Symbol = {
+    displayName: 'X (l)',
     rectangles: [
         {
             x: 0,
@@ -563,7 +604,8 @@ export const hBD: C64Symbol = {
         },
     ]
 }; // x1
-export const hD8: C64Symbol = {
+const hD8: C64Symbol = {
+    displayName: 'X (r)',
     circles: [
         {
             cx: 0.5 * dim.boxWidth,
@@ -601,7 +643,8 @@ export const hD8: C64Symbol = {
         }
     ]
 }; // x2
-export const hBC: C64Symbol = {
+const hBC: C64Symbol = {
+    displayName: 'C (l)',
     rectangles: [
         {
             x: dim.boxWidth/2,
@@ -613,7 +656,8 @@ export const hBC: C64Symbol = {
         },
     ]
 }; // c1
-export const hC3: C64Symbol = {
+const hC3: C64Symbol = {
+    displayName: 'C (r)',
     lines: [
         {
             x1: 0,
@@ -623,7 +667,8 @@ export const hC3: C64Symbol = {
         }
     ]
 }; // c2
-export const hBE: C64Symbol = {
+const hBE: C64Symbol = {
+    displayName: 'V (l)',
     rectangles: [
         {
             x: 0,
@@ -635,7 +680,8 @@ export const hBE: C64Symbol = {
         }
     ]
 }; // v1
-export const hD6: C64Symbol = {
+const hD6: C64Symbol = {
+    displayName: 'V (r)',
     lines: [
         {
             x1: 0.55*dim.strokeWidth,
@@ -653,7 +699,8 @@ export const hD6: C64Symbol = {
         }
     ]
 }; // v2
-export const hBF: C64Symbol = {
+const hBF: C64Symbol = {
+    displayName: 'B (l)',
     rectangles: [
         {
             x: 0,
@@ -673,7 +720,8 @@ export const hBF: C64Symbol = {
         }
     ]
 }; // b1
-export const hC2: C64Symbol = {
+const hC2: C64Symbol = {
+    displayName: 'B (r)',
     lines: [
         {
             x1: dim.boxWidth/2,
@@ -683,7 +731,8 @@ export const hC2: C64Symbol = {
         }
     ]
 }; // b2
-export const hA7: C64Symbol = {
+const hA7: C64Symbol = {
+    displayName: 'N (l)',
     rectangles: [
         {
             x: dim.boxWidth/8*6,
@@ -695,7 +744,8 @@ export const hA7: C64Symbol = {
         }
     ]
 }; // n1
-export const hCE: C64Symbol = {
+const hCE: C64Symbol = {
+    displayName: 'N (r)',
     lines: [
         {
             x1: 0.55*dim.strokeWidth,
@@ -706,7 +756,8 @@ export const hCE: C64Symbol = {
         }
     ]
 }; // n2
-export const hAA: C64Symbol = {
+const hAA: C64Symbol = {
+    displayName: 'M (l)',
     rectangles: [
         {
             x: dim.boxWidth/8*7,
@@ -718,7 +769,8 @@ export const hAA: C64Symbol = {
         }
     ]
 }; // m1
-export const hCD: C64Symbol = {
+const hCD: C64Symbol = {
+    displayName: 'M (r)',
     lines: [
         {
             x1: 0.55*dim.strokeWidth,
@@ -729,7 +781,8 @@ export const hCD: C64Symbol = {
         }
     ]
 }; // m2
-export const hA6: C64Symbol = {
+const hA6: C64Symbol = {
+    displayName: '+ (l)',
     rectangles: [
         {
             x: 0,
@@ -797,7 +850,8 @@ export const hA6: C64Symbol = {
         }
     ]
 }; // pl1
-export const hDB: C64Symbol = {
+const hDB: C64Symbol = {
+    displayName: '+ (r)',
     lines: [
         {
             x1: dim.boxWidth/2,
@@ -813,7 +867,8 @@ export const hDB: C64Symbol = {
         }
     ]
 }; // pl2
-export const hDC: C64Symbol = {
+const hDC: C64Symbol = {
+    displayName: '- (l)',
     lines: [
         {
             x1: dim.boxWidth/2+dim.strokeWidth/2,
@@ -857,7 +912,8 @@ export const hDC: C64Symbol = {
         }
     ]
 }; // mi1
-export const hDD: C64Symbol = {
+const hDD: C64Symbol = {
+    displayName: '- (r)',
     lines: [
         {
             x1: dim.boxWidth/7*3,
@@ -867,7 +923,8 @@ export const hDD: C64Symbol = {
         }
     ]
 }; // mi2
-export const hA4: C64Symbol = {
+const hA4: C64Symbol = {
+    displayName: '@ (l)',
     rectangles: [
         {
             x: 0,
@@ -879,7 +936,8 @@ export const hA4: C64Symbol = {
         }
     ]
 }; // et1
-export const hBA: C64Symbol = {
+const hBA: C64Symbol = {
+    displayName: '@ (r)',
     rectangles: [
         {
             x: 0,
@@ -899,7 +957,8 @@ export const hBA: C64Symbol = {
         }
     ]
 }; // et2
-export const hDF: C64Symbol = {
+const hDF: C64Symbol = {
+    displayName: '* (l)',
     paths: [
         {
             d: `M0 0
@@ -910,7 +969,8 @@ export const hDF: C64Symbol = {
         }
     ]
 }; // st1
-export const hC0: C64Symbol = {
+const hC0: C64Symbol = {
+    displayName: '* (r)',
     lines: [
         {
             x1: 0,
@@ -920,7 +980,8 @@ export const hC0: C64Symbol = {
         }
     ]
 }; // st2
-export const hA8: C64Symbol = {
+const hA8: C64Symbol = {
+    displayName: '£ (l)',
     lines: [
         {
             x1: 0,
@@ -964,7 +1025,8 @@ export const hA8: C64Symbol = {
         }
     ]
 }; // pd1
-export const hA9: C64Symbol = {
+const hA9: C64Symbol = {
+    displayName: '£ (r)',
     paths: [
         {
             d: `M0 0
@@ -975,3 +1037,68 @@ export const hA9: C64Symbol = {
         }
     ]
 }; // pd2
+
+export const symbols: Map<string, C64Symbol> = new Map([
+    [ 'AB', hAB ],
+    [ 'D1', hD1 ],
+    [ 'B3', hB3 ],
+    [ 'D7', hD7 ],
+    [ 'B1', hB1 ],
+    [ 'C5', hC5 ],
+    [ 'B2', hB2 ],
+    [ 'D2', hD2 ],
+    [ 'A3', hA3 ],
+    [ 'D4', hD4 ],
+    [ 'B7', hB7 ],
+    [ 'D9', hD9 ],
+    [ 'B8', hB8 ],
+    [ 'D5', hD5 ],
+    [ 'A2', hA2 ],
+    [ 'C9', hC9 ],
+    [ 'B9', hB9 ],
+    [ 'CF', hCF ],
+    [ 'AF', hAF ],
+    [ 'D0', hD0 ],
+    [ 'B0', hB0 ],
+    [ 'C1', hC1 ],
+    [ 'AE', hAE ],
+    [ 'D3', hD3 ],
+    [ 'AC', hAC ],
+    [ 'C4', hC4 ],
+    [ 'BB', hBB ],
+    [ 'C6', hC6 ],
+    [ 'A5', hA5 ],
+    [ 'C7', hC7 ],
+    [ 'B4', hB4 ],
+    [ 'C8', hC8 ],
+    [ 'B5', hB5 ],
+    [ 'CA', hCA ],
+    [ 'A1', hA1 ],
+    [ 'CB', hCB ],
+    [ 'B6', hB6 ],
+    [ 'CC', hCC ],
+    [ 'AD', hAD ],
+    [ 'DA', hDA ],
+    [ 'BD', hBD ],
+    [ 'D8', hD8 ],
+    [ 'BC', hBC ],
+    [ 'C3', hC3 ],
+    [ 'BE', hBE ],
+    [ 'D6', hD6 ],
+    [ 'BF', hBF ],
+    [ 'C2', hC2 ],
+    [ 'A7', hA7 ],
+    [ 'CE', hCE ],
+    [ 'AA', hAA ],
+    [ 'CD', hCD ],
+    [ 'A6', hA6 ],
+    [ 'DB', hDB ],
+    [ 'DC', hDC ],
+    [ 'DD', hDD ],
+    [ 'A4', hA4 ],
+    [ 'BA', hBA ],
+    [ 'DF', hDF ],
+    [ 'C0', hC0 ],
+    [ 'A8', hA8 ],
+    [ 'A9', hA9 ]
+]);

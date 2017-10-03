@@ -1,5 +1,5 @@
 <app-symbol-generator></app-symbol-generator>
 <select [(ngModel)]="symbol" (ngModelChange)="onDropDownChange($event)">
-    <option *ngFor="let symbol of symbolList" [ngValue]="symbol">{{symbol.key}} - #{{symbol.hex}}</option>
+    <option *ngFor="let symbol of symbolList" [ngValue]="symbol">{{symbol.displayName}} - #{{symbol.id}}</option>
 </select>
 <a id="link">Export (Save As...)</a>
